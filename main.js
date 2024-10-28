@@ -43,7 +43,6 @@ export async function tambahBuah(nama, warna, harga) {
   }
 }
 
-
 export async function ambilDaftarBuah() {
   const refDokumen = collection(basisdata, "buah");
   const kueri = query(refDokumen, orderBy("nama"));
@@ -60,4 +59,8 @@ export async function ambilDaftarBuah() {
   })
   
   return hasilKueri;
+}
+
+export async function hapusbuah(id) {
+  await deleteDoc(doc(basisdata, "buah", id))
 }

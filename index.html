@@ -29,7 +29,7 @@
      <a href="formtambah.html">Tambah Buah</a>
       
       <script type="module">
-        import { ambilDaftarBuah } from './main.js';
+        import { ambilDaftarBuah, hapusbuah } from './main.js';
         
         $(document).ready(async function() {
           let elemenDaftarBuah = $("#daftar-buah > tbody");
@@ -47,9 +47,19 @@
           "</tr>"
           )
       })
-      })
+      
+      
+         $('.tombol-hapus').click(async function() {
+        await hapusbuah($(this).attr('data'))
+        location.reload()
+          })
+          
+      
+      
+        })
+      
+     
 
-    
     
   </script>
 
