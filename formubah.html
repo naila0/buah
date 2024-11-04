@@ -39,23 +39,32 @@
     
     
     <script type="module">
-    import {  } from "./main.js";
+    import { ubahBuah, ambilBuah } from "./main.js";
     
     $(document).ready(async function() {
-      // ambil data dari formulir
+      const queryString = window.location.search
+      const parameterURL = new URLSearchParams(queryString)
+      const id = parameterURL.get('id')
+      const buah = await ambilBuah(id)
       
+      $("#inputnama").val(buah.nama)
+      $("#inputwarna").val(buah.warna)
+      $("#inputharga").val(buah.harga)
+
       // ketika tombol tambah di pencet
       $("#tombolsimpan").click(async function(event) {
         event.preventDefault()
         
-        let nama = $("#inputnama").val()
+      let nama = $("#inputnama").val()
       let warna = $("#inputwarna").val()
       let harga = $("#inputharga").val()
         
-        
+        //simpan data buah yang baru 
+          await ubahBuah(id, nama, warna, harga)
+          
         window.location.href ="index.html"
-      })
-   })
+      });
+   });
   </script>
 </body>
 

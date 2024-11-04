@@ -58,10 +58,11 @@
       })
           
         $(".link-ubah") .click(async function() {
-          location.replace('formubah.html')
+          location.replace('formubah.html?id=' + $(this).attr('data'))
         })
-      
-    })
+        
+        })
+     
   </script>
 
       <body>
