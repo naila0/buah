@@ -64,3 +64,10 @@ export async function ambilDaftarBuah() {
 export async function hapusbuah(id) {
   await deleteDoc(doc(basisdata, "buah", id))
 }
+
+export async function ubahbuah(id, namabaru, warnabaru, hargabaru) {
+  await updateDoc(
+    doc(basisdata, "buah", id),
+    {nama: namabaru, warna: warnabaru, harga: hargabaru}
+    )
+}

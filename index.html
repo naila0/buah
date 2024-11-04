@@ -15,7 +15,7 @@
   <h1>Daftar Buah</h1>
 
   <table class="table table-striped table-bordered " id="daftar-buah">
-    <thead>
+    <thead class="table-info">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nama Buah</th>
@@ -50,7 +50,6 @@
         nomor = nomor + 1
       })
       
-      
          $('.tombol-hapus').click(async function() {
         if  (confirm("Apakah benar mau menghapus?")) {
           await hapusbuah($(this).attr('data'))
@@ -58,7 +57,9 @@
         }
       })
           
-      
+        $(".link-ubah") .click(async function() {
+          location.replace('formubah.html')
+        })
       
     })
   </script>
